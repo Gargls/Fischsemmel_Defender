@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwnvi4thrgh80"]
+
+[ext_resource type="Texture2D" uid="uid://b8u63ttw5j3r8" path="res://icon.svg" id="1_ic5on"]
+[ext_resource type="PackedScene" uid="uid://dhnomtvrkb11c" path="res://Scenes/Player/player_character.tscn" id="2_8d8vo"]
+
+[node name="Testlevel" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0, 1, 0.447059, 1)
+custom_minimum_size = Vector2(1152, 648)
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("1_ic5on")
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("2_8d8vo")]
+position = Vector2(502, 358)
