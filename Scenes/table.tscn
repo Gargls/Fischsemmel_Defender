@@ -1,8 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://b55g3nfefonee"]
+[gd_scene load_steps=4 format=3 uid="uid://b55g3nfefonee"]
 
+[ext_resource type="Script" uid="uid://bi0jbwctp8du7" path="res://Scenes/table.gd" id="1_4ppvu"]
 [ext_resource type="Texture2D" uid="uid://s1pgfe0qfa8e" path="res://PlaceHolder_Assets/Rhombus/Rhombus-0005.png" id="1_ix8et"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ix8et"]
+radius = 8.0
+
 [node name="Table" type="Node2D" groups=["Table"]]
+script = ExtResource("1_4ppvu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_ix8et")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_ix8et")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

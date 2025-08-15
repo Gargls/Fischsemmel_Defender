@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c37lapmr1ddg"]
+
+[ext_resource type="Script" uid="uid://bjtyhtj72nq4l" path="res://spawn_manager.gd" id="1_svyko"]
+[ext_resource type="PackedScene" uid="uid://1x0v1qybe4v7" path="res://Scenes/Enemies/enemy.tscn" id="2_tj4c6"]
+
+[node name="Spawn_Manager" type="Node2D" groups=["spawner"]]
+script = ExtResource("1_svyko")
+enemy_scenes = ExtResource("2_tj4c6")
+
+[node name="SpawnArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnArea"]
+
+[node name="Cooldown_Waves" type="Timer" parent="."]
+
+[connection signal="timeout" from="Cooldown_Waves" to="." method="_on_cooldown_waves_timeout"]

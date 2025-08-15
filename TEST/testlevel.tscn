@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwnvi4thrgh80"]
+[gd_scene load_steps=7 format=3 uid="uid://dwnvi4thrgh80"]
 
 [ext_resource type="Texture2D" uid="uid://b8u63ttw5j3r8" path="res://icon.svg" id="1_ic5on"]
 [ext_resource type="PackedScene" uid="uid://dhnomtvrkb11c" path="res://Scenes/Player/player_character.tscn" id="2_8d8vo"]
 [ext_resource type="PackedScene" uid="uid://b55g3nfefonee" path="res://Scenes/table.tscn" id="3_1h4as"]
-[ext_resource type="PackedScene" uid="uid://1x0v1qybe4v7" path="res://Scenes/Enemies/enemy.tscn" id="4_xrx6n"]
+[ext_resource type="PackedScene" uid="uid://c37lapmr1ddg" path="res://spawn_manager.tscn" id="4_1h4as"]
+[ext_resource type="PackedScene" uid="uid://blh5e3o2vg4tm" path="res://DEBUG/debug_hud.tscn" id="5_xrx6n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrx6n"]
+size = Vector2(1152, 55)
 
 [node name="Testlevel" type="Node2D"]
 
@@ -21,11 +25,22 @@ position = Vector2(502, 358)
 position = Vector2(580, 563)
 scale = Vector2(4, 4)
 
-[node name="enemy" parent="." instance=ExtResource("4_xrx6n")]
-position = Vector2(276, 124)
+[node name="Spawn_Manager" parent="." instance=ExtResource("4_1h4as")]
 
-[node name="enemy2" parent="." instance=ExtResource("4_xrx6n")]
-position = Vector2(954, 136)
+[node name="SpawnArea" parent="Spawn_Manager" index="0"]
+position = Vector2(563, -31)
 
-[node name="enemy3" parent="." instance=ExtResource("4_xrx6n")]
-position = Vector2(986, 417)
+[node name="CollisionShape2D" parent="Spawn_Manager/SpawnArea" index="0"]
+position = Vector2(13, -1)
+shape = SubResource("RectangleShape2D_xrx6n")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 326)
+
+[node name="DEBUG_HUD" parent="Camera2D" instance=ExtResource("5_xrx6n")]
+offset_left = -568.0
+offset_top = -314.0
+offset_right = -568.0
+offset_bottom = -314.0
+
+[editable path="Spawn_Manager"]

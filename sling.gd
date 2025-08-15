@@ -3,6 +3,7 @@ extends Node2D
 @export var proj_scene:PackedScene
 @onready var nozzle: Node = $nozzle
 
+
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("shoot"):
 		var proj = proj_scene.instantiate()
