@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b55g3nfefonee"]
+
+[ext_resource type="Texture2D" uid="uid://s1pgfe0qfa8e" path="res://PlaceHolder_Assets/Rhombus/Rhombus-0005.png" id="1_ix8et"]
+
+[node name="Table" type="Node2D" groups=["Table"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ix8et")

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://clstowf4w8e63"]
+
+[ext_resource type="Script" uid="uid://b8cihwhht0j1h" path="res://Scripts/Player/projectile.gd" id="1_5gqvx"]
+[ext_resource type="Texture2D" uid="uid://bbrocsmu6p7ry" path="res://PlaceHolder_Assets/Circle/Circle-0001.png" id="1_mhv6k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5gqvx"]
+radius = 15.1327
+
+[node name="Projectile" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+collision_layer = 0
+collision_mask = 5
+script = ExtResource("1_5gqvx")
+projectile_time = 1.5
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mhv6k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5gqvx")
+
+[node name="proj_timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="proj_timer" to="." method="_on_proj_timer_timeout"]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://caqsh85moug04"]
+
+[ext_resource type="PackedScene" uid="uid://clstowf4w8e63" path="res://Scenes/Player/projectile.tscn" id="1_ipqlo"]
+[ext_resource type="Texture2D" uid="uid://pn2nsx7i0h52" path="res://PlaceHolder_Assets/Triangle/Triangle-0006.png" id="2_uh2hx"]
+
+[node name="Projectile" instance=ExtResource("1_ipqlo")]
+projectile_speed = 900.0
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_uh2hx")

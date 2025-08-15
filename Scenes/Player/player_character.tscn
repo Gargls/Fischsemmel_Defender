@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhnomtvrkb11c"]
+[gd_scene load_steps=5 format=3 uid="uid://dhnomtvrkb11c"]
 
 [ext_resource type="Script" uid="uid://ckrrqt2r5557n" path="res://Scripts/Player/player_character.gd" id="1_cnrop"]
-[ext_resource type="Texture2D" uid="uid://b8u63ttw5j3r8" path="res://icon.svg" id="2_uqtl7"]
+[ext_resource type="Texture2D" uid="uid://b7l5ss7ln7fmy" path="res://PlaceHolder_Assets/Circle/Circle-0007.png" id="2_cnrop"]
+[ext_resource type="PackedScene" uid="uid://chrf1c5w7h4jr" path="res://Scenes/Player/sling.tscn" id="3_uqtl7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1w75v"]
 radius = 25.0
@@ -10,8 +11,12 @@ radius = 25.0
 script = ExtResource("1_cnrop")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_uqtl7")
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_cnrop")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1w75v")
+
+[node name="Sling" parent="." instance=ExtResource("3_uqtl7")]
+position = Vector2(31, 0)
+rotation = 1.5708

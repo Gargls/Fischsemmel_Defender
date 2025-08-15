@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://chrf1c5w7h4jr"]
+
+[ext_resource type="Script" uid="uid://bib4wm7mioanl" path="res://sling.gd" id="1_byuhe"]
+[ext_resource type="Texture2D" uid="uid://d20ah0th4yal4" path="res://PlaceHolder_Assets/Triangle/Triangle-0002.png" id="2_4yhmt"]
+[ext_resource type="PackedScene" uid="uid://caqsh85moug04" path="res://Scenes/Player/projectiles/fast_proj.tscn" id="2_oh7ti"]
+
+[node name="Sling" type="Node2D"]
+script = ExtResource("1_byuhe")
+proj_scene = ExtResource("2_oh7ti")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4yhmt")
+
+[node name="nozzle" type="Node2D" parent="."]
