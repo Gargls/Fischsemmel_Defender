@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="AmmoResource" load_steps=3 format=3 uid="uid://ktjm4iij5216"]
 
 [ext_resource type="Script" uid="uid://d0qhgn82mw2en" path="res://Resources/ammo_resource.gd" id="1_6av3l"]
-[ext_resource type="Texture2D" uid="uid://2b0pcdqfec3u" path="res://assets/kenney/kenney_top-down-tanks-redux/PNG/Retina/barrelRust_top.png" id="2_6av3l"]
+[ext_resource type="Texture2D" uid="uid://2b0pcdqfec3u" path="res://assets/barrelRust_top.png" id="2_6av3l"]
 
 [resource]
 script = ExtResource("1_6av3l")

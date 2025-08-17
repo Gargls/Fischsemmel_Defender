@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://chrf1c5w7h4jr"]
+[gd_scene load_steps=7 format=3 uid="uid://chrf1c5w7h4jr"]
 
 [ext_resource type="Script" uid="uid://bib4wm7mioanl" path="res://Scripts/sling.gd" id="1_byuhe"]
 [ext_resource type="Texture2D" uid="uid://d20ah0th4yal4" path="res://PlaceHolder_Assets/Triangle/Triangle-0002.png" id="2_4yhmt"]
 [ext_resource type="PackedScene" uid="uid://caqsh85moug04" path="res://Scenes/Player/projectiles/pebble.tscn" id="2_oh7ti"]
 [ext_resource type="Texture2D" uid="uid://bbrocsmu6p7ry" path="res://PlaceHolder_Assets/Circle/Circle-0001.png" id="4_oh7ti"]
+[ext_resource type="AudioStream" uid="uid://b8y50pr4hcmkv" path="res://assets/sounds/stretch-rubber-rope-foley-16-209730.mp3" id="5_vpac3"]
+[ext_resource type="AudioStream" uid="uid://die0g72yusqmu" path="res://assets/sounds/086123_slingshot-81843.mp3" id="6_20bgv"]
 
 [node name="Sling" type="Node2D"]
 script = ExtResource("1_byuhe")
@@ -20,3 +22,9 @@ width = 30.0
 default_color = Color(0.85098, 0, 0.282353, 0.498039)
 texture = ExtResource("4_oh7ti")
 texture_mode = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_vpac3")
+
+[node name="sling_shot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_20bgv")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7pmvymkrvn33"]
+
+[ext_resource type="Script" uid="uid://c6m86jfmci0q6" path="res://Scenes/Player/life.gd" id="1_2ne0y"]
+[ext_resource type="Texture2D" uid="uid://drnj7cw7c13c8" path="res://assets/selfmade/fischsemmel.png" id="1_xpoqa"]
+
+[node name="Life" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2ne0y")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+value = 48.0
+texture_under = ExtResource("1_xpoqa")
+texture_progress = ExtResource("1_xpoqa")
+tint_under = Color(0.439216, 0.439216, 0.439216, 0.658824)

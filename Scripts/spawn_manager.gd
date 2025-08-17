@@ -5,17 +5,21 @@ extends Node2D
 @export var time_between_waves: float = 10.0
 @export var enemies_per_wave: int = 4
 @export var raise_difficulty_by:int = 1
+@export var win_label:Label
+@export var rounds_to_win:int = 5
 
 @onready var spawn_area: Area2D = $SpawnArea
 @onready var cooldown_waves: Timer = $Cooldown_Waves
 
-var current_wave:int = -1
+var current_wave:int = 0
 var wave_in_progress:bool = false
 
 func _ready() -> void:
 	start_next_wave()
 
 func _process(delta: float) -> void:
+	if current_wave >= rounds_to_win:
+		winning()
 	
 	if wave_in_progress:
 		cooldown_waves.stop()
@@ -23,6 +27,13 @@ func _process(delta: float) -> void:
 			wave_in_progress = false
 			if cooldown_waves.is_stopped():
 				cooldown_waves.start(time_between_waves)
+
+
+func winning():
+	print("Yay u won lol")
+	win_label.show()
+	await get_tree().create_timer(5).timeout
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 	
 
 func start_next_wave():

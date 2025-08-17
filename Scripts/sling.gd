@@ -9,6 +9,8 @@ extends Node2D
 @onready var player:PlayerCharacter = get_tree().get_first_node_in_group("player")
 @onready var preview_line: Line2D = $PreviewLine
 @onready var nozzle: Node = $nozzle
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var sling_shot: AudioStreamPlayer2D = $sling_shot
 
 var charging:bool = false
 var charge_timer: float = 0.0
@@ -17,7 +19,7 @@ var ammo
 ## Shooting Mechanics
 
 func start_charging():
-	
+	audio_stream_player_2d.play()
 	ammo = inventory.get_current_ammo()
 	if ammo == null:
 		print("No Ammo Selected!")
@@ -28,11 +30,13 @@ func start_charging():
 
 
 func release_shot():
+	audio_stream_player_2d.stop()
 	if charging:
 		charging = false
 		var t = charge_timer / charge_time
 		var final_force = lerp(min_shot_force, max_shot_force, t)
 		if final_force >= 75:
+			sling_shot.play()
 			var proj_scene:PackedScene = ammo
 			var proj = proj_scene.instantiate()
 			var dir = (get_global_mouse_position() - nozzle.global_position).normalized()
