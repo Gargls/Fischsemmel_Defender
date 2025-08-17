@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhnomtvrkb11c"]
+[gd_scene load_steps=8 format=3 uid="uid://dhnomtvrkb11c"]
 
 [ext_resource type="Script" uid="uid://ckrrqt2r5557n" path="res://Scripts/Player/player_character.gd" id="1_cnrop"]
 [ext_resource type="Texture2D" uid="uid://b7l5ss7ln7fmy" path="res://PlaceHolder_Assets/Circle/Circle-0007.png" id="2_cnrop"]
 [ext_resource type="PackedScene" uid="uid://chrf1c5w7h4jr" path="res://Scenes/Player/sling.tscn" id="3_uqtl7"]
 [ext_resource type="Script" uid="uid://dgfg0t828jb71" path="res://Scripts/Player/inventory.gd" id="4_1w75v"]
+[ext_resource type="PackedScene" uid="uid://caqsh85moug04" path="res://Scenes/Player/projectiles/pebble.tscn" id="5_bex70"]
+[ext_resource type="PackedScene" uid="uid://dktmy0lx2jw2" path="res://Scenes/Player/projectiles/stone.tscn" id="6_hplj0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1w75v"]
 radius = 25.0
@@ -25,3 +27,4 @@ inventory = NodePath("../inventory")
 
 [node name="inventory" type="Node" parent="."]
 script = ExtResource("4_1w75v")
+ammo_array = Array[PackedScene]([ExtResource("5_bex70"), ExtResource("6_hplj0")])

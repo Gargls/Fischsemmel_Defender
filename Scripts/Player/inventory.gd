@@ -5,31 +5,30 @@ extends Node
 var slots: Array[PackedScene] = [null, null, null, null, null]
 var current_slot: int = 0
 
-@onready var ammo_array: Array[PackedScene] = []
-var scene_folder:String = "res://Scenes/Player/projectiles/"
+@export var ammo_array: Array[PackedScene] = []
 
-func _ready() -> void:
-	load_scenes_from_folder()
+#func _ready() -> void:
+	#load_scenes_from_folder()
 	
-func load_scenes_from_folder():
-	ammo_array.clear()
-	var dir = DirAccess.open(scene_folder)
-
-	if dir:
-		dir.list_dir_begin()
-		var file_name = dir.get_next()
-		
-		while file_name != "":
-			if file_name.ends_with(".tscn"):
-				var scene_path = scene_folder + file_name
-				var scene = load(scene_path)
-				if scene is PackedScene:
-					ammo_array.append(scene)
-			file_name = dir.get_next()
-		
-		print("Loaded scenes:", ammo_array.size())
-	else:
-		print("Failed to open folder:", scene_folder)
+#func load_scenes_from_folder():
+	#ammo_array.clear()
+	#var dir = DirAccess.open(scene_folder)
+#
+	#if dir:
+		#dir.list_dir_begin()
+		#var file_name = dir.get_next()
+		#
+		#while file_name != "":
+			#if file_name.ends_with(".tscn"):
+				#var scene_path = scene_folder + file_name
+				#var scene = load(scene_path)
+				#if scene is PackedScene:
+					#ammo_array.append(scene)
+			#file_name = dir.get_next()
+		#
+		#print("Loaded scenes:", ammo_array.size())
+	#else:
+		#print("Failed to open folder:", scene_folder)
 
 
 func _physics_process(delta: float) -> void:

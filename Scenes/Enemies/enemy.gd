@@ -3,6 +3,7 @@ class_name enemy
 extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 @export var life:int = 10
 @export var move_speed:float = 200.0
@@ -41,6 +42,7 @@ func hurt(damage:int=1):
 	print(self, life)
 	if life <= 0:
 		self.hide()
+		collision_shape_2d.queue_free()
 		await audio_stream_player_2d.finished
 		queue_free()
 
