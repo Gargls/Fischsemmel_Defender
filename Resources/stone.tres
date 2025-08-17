@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="AmmoResource" load_steps=3 format=3 uid="uid://ktjm4iij5216"]
 
 [ext_resource type="Script" uid="uid://d0qhgn82mw2en" path="res://Resources/ammo_resource.gd" id="1_6av3l"]
-[ext_resource type="Texture2D" uid="uid://8yjfhiib6p7m" path="res://PlaceHolder_Assets/Circle/Circle-0006.png" id="2_v5pv7"]
+[ext_resource type="Texture2D" uid="uid://2b0pcdqfec3u" path="res://assets/kenney/kenney_top-down-tanks-redux/PNG/Retina/barrelRust_top.png" id="2_6av3l"]
 
 [resource]
 script = ExtResource("1_6av3l")
 name = "Stone"
-sprite = ExtResource("2_v5pv7")
+sprite = ExtResource("2_6av3l")
 damage = 3
 speed_mult = 0.5
 max_range = 100.0
