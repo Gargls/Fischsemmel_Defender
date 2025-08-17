@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b55g3nfefonee"]
 
 [ext_resource type="Script" uid="uid://bi0jbwctp8du7" path="res://Scenes/table.gd" id="1_4ppvu"]
-[ext_resource type="Texture2D" uid="uid://s1pgfe0qfa8e" path="res://PlaceHolder_Assets/Rhombus/Rhombus-0005.png" id="1_ix8et"]
+[ext_resource type="Texture2D" uid="uid://dg17nlr42scx7" path="res://assets/selfmade/Decke.png" id="2_4ppvu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ix8et"]
 radius = 8.0
@@ -10,7 +10,8 @@ radius = 8.0
 script = ExtResource("1_4ppvu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ix8et")
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_4ppvu")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 5
