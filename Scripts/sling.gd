@@ -17,6 +17,7 @@ var ammo
 ## Shooting Mechanics
 
 func start_charging():
+	
 	ammo = inventory.get_current_ammo()
 	if ammo == null:
 		print("No Ammo Selected!")
@@ -32,7 +33,8 @@ func release_shot():
 		var t = charge_timer / charge_time
 		var final_force = lerp(min_shot_force, max_shot_force, t)
 		if final_force >= 75:
-			var proj:projectile = proj_scene.instantiate()
+			var proj_scene:PackedScene = ammo
+			var proj = proj_scene.instantiate()
 			var dir = (get_global_mouse_position() - nozzle.global_position).normalized()
 			proj.velocity = dir * final_force
 			proj.spawn_position = nozzle.global_position

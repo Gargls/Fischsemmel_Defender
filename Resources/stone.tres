@@ -7,8 +7,8 @@
 script = ExtResource("1_6av3l")
 name = "Stone"
 sprite = ExtResource("2_v5pv7")
-damage = 6
-speed_mult = 20.0
+damage = 3
+speed_mult = 0.5
 max_range = 100.0
 stun = true
 stun_duration = 1.5

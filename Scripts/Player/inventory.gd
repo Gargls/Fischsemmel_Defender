@@ -33,6 +33,11 @@ func load_scenes_from_folder():
 
 
 func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("cycle_next"):
+		cycle_next()
+	
+	if Input.is_action_just_pressed("cycle_previous"):
+		cycle_previous()
 	
 	if Input.is_action_just_pressed("debug_1"):
 		var random_ammo = ammo_array.pick_random()
@@ -63,22 +68,24 @@ func use_ammo():
 	return ammo
 	
 func cycle_next():
-	var start_slot = current_slot
-	while true:
-		current_slot = (current_slot + 1) % MAX_SLOTS
-		if slots[current_slot] != null:
-			break
-		if current_slot == start_slot:
-			break
+		print("bla2")
+		var start_slot = current_slot
+		while true:
+			current_slot = (current_slot + 1) % MAX_SLOTS
+			if slots[current_slot] != null:
+				break
+			if current_slot == start_slot:
+				break
 
 func cycle_previous():
-	var start_slot = current_slot
-	while true:
-		current_slot = (current_slot - 1 + MAX_SLOTS) % MAX_SLOTS
-		if slots[current_slot] != null:
-			break
-		if current_slot == start_slot:
-			break
+		print("bla1")
+		var start_slot = current_slot
+		while true:
+			current_slot = (current_slot - 1 + MAX_SLOTS) % MAX_SLOTS
+			if slots[current_slot] != null:
+				break
+			if current_slot == start_slot:
+				break
 
 func get_current_ammo():
 	return slots[current_slot]

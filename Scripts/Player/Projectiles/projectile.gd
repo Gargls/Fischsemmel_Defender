@@ -19,7 +19,7 @@ func _ready() -> void:
 	global_position = spawn_position
 	global_rotation = spawn_rotation
 	sprite = stats.sprite
-	sprite_2d.texture = sprite
+	sprite_2d.texture = stats.sprite
 
 
 func _physics_process(delta):
@@ -40,6 +40,6 @@ func _on_body_entered(body: Node2D) -> void:
 		var knockback_direction = (body.global_position - position).normalized()
 		body.hurt(stats.damage)
 		print(stats.damage, " Damage Applied")
-		#body.apply_knockback(knockback_direction, stats.knockback, stats.knockback_duration)
+		body.apply_knockback(knockback_direction, stats.knockback, 1)
 		print("hurt!")
 		queue_free()
