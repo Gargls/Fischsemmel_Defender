@@ -1,13 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhnomtvrkb11c"]
+[gd_scene load_steps=6 format=3 uid="uid://dhnomtvrkb11c"]
 
 [ext_resource type="Script" uid="uid://ckrrqt2r5557n" path="res://Scripts/Player/player_character.gd" id="1_cnrop"]
 [ext_resource type="Texture2D" uid="uid://b7l5ss7ln7fmy" path="res://PlaceHolder_Assets/Circle/Circle-0007.png" id="2_cnrop"]
 [ext_resource type="PackedScene" uid="uid://chrf1c5w7h4jr" path="res://Scenes/Player/sling.tscn" id="3_uqtl7"]
+[ext_resource type="Script" uid="uid://dgfg0t828jb71" path="res://Scripts/Player/inventory.gd" id="4_1w75v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1w75v"]
 radius = 25.0
 
-[node name="PlayerCharacter" type="CharacterBody2D"]
+[node name="PlayerCharacter" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_cnrop")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -17,6 +18,10 @@ texture = ExtResource("2_cnrop")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1w75v")
 
-[node name="Sling" parent="." instance=ExtResource("3_uqtl7")]
+[node name="Sling" parent="." node_paths=PackedStringArray("inventory") instance=ExtResource("3_uqtl7")]
 position = Vector2(31, 0)
 rotation = 1.5708
+inventory = NodePath("../inventory")
+
+[node name="inventory" type="Node" parent="."]
+script = ExtResource("4_1w75v")

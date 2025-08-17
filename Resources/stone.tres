@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="AmmoResource" load_steps=3 format=3 uid="uid://ktjm4iij5216"]
+
+[ext_resource type="Script" uid="uid://d0qhgn82mw2en" path="res://Resources/ammo_resource.gd" id="1_6av3l"]
+[ext_resource type="Texture2D" uid="uid://8yjfhiib6p7m" path="res://PlaceHolder_Assets/Circle/Circle-0006.png" id="2_v5pv7"]
+
+[resource]
+script = ExtResource("1_6av3l")
+name = "Stone"
+sprite = ExtResource("2_v5pv7")
+damage = 6
+speed_mult = 20.0
+max_range = 100.0
+stun = true
+stun_duration = 1.5
+knockback = 100.0
+metadata/_custom_type_script = "uid://d0qhgn82mw2en"

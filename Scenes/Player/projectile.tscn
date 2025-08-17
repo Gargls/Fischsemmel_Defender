@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://clstowf4w8e63"]
 
-[ext_resource type="Script" uid="uid://b8cihwhht0j1h" path="res://Scripts/Player/projectile.gd" id="1_5gqvx"]
-[ext_resource type="Texture2D" uid="uid://bbrocsmu6p7ry" path="res://PlaceHolder_Assets/Circle/Circle-0001.png" id="1_mhv6k"]
+[ext_resource type="Script" uid="uid://b8cihwhht0j1h" path="res://Scripts/Player/Projectiles/projectile.gd" id="1_5gqvx"]
+[ext_resource type="Resource" uid="uid://kulgoelew6w8" path="res://Resources/pebble.tres" id="2_ea43s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5gqvx"]
 radius = 15.1327
@@ -11,10 +11,9 @@ scale = Vector2(0.5, 0.5)
 collision_layer = 0
 collision_mask = 5
 script = ExtResource("1_5gqvx")
-projectile_time = 1.5
+stats = ExtResource("2_ea43s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_mhv6k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_5gqvx")

@@ -10,6 +10,7 @@ radius = 15.0333
 collision_layer = 5
 script = ExtResource("1_jcvw6")
 life = 2
+move_speed = 40.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_jcvw6")

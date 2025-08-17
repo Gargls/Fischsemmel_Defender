@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://xs5x13v5dnrm"]
+
+[ext_resource type="Script" uid="uid://dga43d6g0n15y" path="res://Scripts/litter.gd" id="1_xwyeb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_woddp"]
+
+[node name="Litter" type="Area2D"]
+script = ExtResource("1_xwyeb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_woddp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

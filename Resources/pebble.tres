@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="AmmoResource" load_steps=3 format=3 uid="uid://kulgoelew6w8"]
+
+[ext_resource type="Script" uid="uid://d0qhgn82mw2en" path="res://Resources/ammo_resource.gd" id="1_q3fv8"]
+[ext_resource type="Texture2D" uid="uid://4a72vmxebmsk" path="res://PlaceHolder_Assets/Rhombus/Rhombus-0001.png" id="2_q3fv8"]
+
+[resource]
+script = ExtResource("1_q3fv8")
+name = "pebble"
+sprite = ExtResource("2_q3fv8")
+damage = 1
+speed_mult = 2.0
+max_range = 200.0
+stun = false
+stun_duration = 1.0
+knockback = 20.0
+metadata/_custom_type_script = "uid://d0qhgn82mw2en"

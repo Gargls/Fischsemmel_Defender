@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://bf8u2h3xnf6vx"]
+
+[ext_resource type="Script" uid="uid://m07al2beovsa" path="res://ammohud.gd" id="1_j74j3"]
+
+[node name="STONEHUD" type="CanvasLayer"]
+script = ExtResource("1_j74j3")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Slot1" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Slot2" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Slot3" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Slot4" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Slot5" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2

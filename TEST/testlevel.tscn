@@ -1,13 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwnvi4thrgh80"]
+[gd_scene load_steps=8 format=3 uid="uid://dwnvi4thrgh80"]
 
 [ext_resource type="Texture2D" uid="uid://b8u63ttw5j3r8" path="res://icon.svg" id="1_ic5on"]
 [ext_resource type="PackedScene" uid="uid://dhnomtvrkb11c" path="res://Scenes/Player/player_character.tscn" id="2_8d8vo"]
 [ext_resource type="PackedScene" uid="uid://b55g3nfefonee" path="res://Scenes/table.tscn" id="3_1h4as"]
 [ext_resource type="PackedScene" uid="uid://c37lapmr1ddg" path="res://spawn_manager.tscn" id="4_1h4as"]
 [ext_resource type="PackedScene" uid="uid://blh5e3o2vg4tm" path="res://DEBUG/debug_hud.tscn" id="5_xrx6n"]
+[ext_resource type="PackedScene" uid="uid://bf8u2h3xnf6vx" path="res://Scenes/Player/Ammo_Hud.tscn" id="6_cieas"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrx6n"]
-size = Vector2(1152, 55)
+size = Vector2(1162, 55)
 
 [node name="Testlevel" type="Node2D"]
 
@@ -31,7 +32,7 @@ scale = Vector2(4, 4)
 position = Vector2(563, -31)
 
 [node name="CollisionShape2D" parent="Spawn_Manager/SpawnArea" index="0"]
-position = Vector2(13, -1)
+position = Vector2(18, -1)
 shape = SubResource("RectangleShape2D_xrx6n")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -43,4 +44,15 @@ offset_top = -314.0
 offset_right = -568.0
 offset_bottom = -314.0
 
+[node name="STONEHUD" parent="Camera2D" instance=ExtResource("6_cieas")]
+inventory_node_path = NodePath("../../PlayerCharacter/inventory")
+
+[node name="HBoxContainer" parent="Camera2D/STONEHUD" index="0"]
+offset_left = 72.0
+offset_top = 552.0
+offset_right = 112.0
+offset_bottom = 592.0
+
+[editable path="PlayerCharacter"]
 [editable path="Spawn_Manager"]
+[editable path="Camera2D/STONEHUD"]

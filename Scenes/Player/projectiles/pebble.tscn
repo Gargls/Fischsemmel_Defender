@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://caqsh85moug04"]
+
+[ext_resource type="PackedScene" uid="uid://clstowf4w8e63" path="res://Scenes/Player/projectile.tscn" id="1_dqu5f"]
+
+[node name="Pebble" instance=ExtResource("1_dqu5f")]

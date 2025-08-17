@@ -18,6 +18,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	if wave_in_progress:
+		cooldown_waves.stop()
 		if get_tree().get_nodes_in_group("enemy").is_empty():
 			wave_in_progress = false
 			if cooldown_waves.is_stopped():
@@ -44,7 +45,7 @@ func spawn_enemy():
 	var enemy_instance = enemy_scenes.instantiate()
 	enemy_instance.global_position = get_random_loc_in_area()
 	enemy_instance.add_to_group("enemy")
-	get_tree().current_scene.add_child(enemy_instance)
+	get_tree().current_scene.add_child.call_deferred(enemy_instance)
 	
 func get_random_loc_in_area():
 	var shape = spawn_area.get_node("CollisionShape2D").shape
