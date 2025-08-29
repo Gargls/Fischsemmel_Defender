@@ -54,6 +54,7 @@ func add_ammo(ammo) -> bool:
 		if slots[i] == null:
 			slots[i] = ammo
 			return true
+	cycle_next()
 	return false #if full
 	
 func use_ammo():
